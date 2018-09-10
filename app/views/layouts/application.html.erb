@@ -1,15 +1,39 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--  <title>Mybank</title>-->
+  <%#= csrf_meta_tags %>
+  <%#= csp_meta_tag %>
+
+  <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<!--</head>-->
+
+<!--<body>-->
+<%#= yield %>
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Mybank</title>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
-<%= yield %>
+<table>
+  <tr>
+    <td><div class="container"><%= link_to 'Gerentes', managers_path %> </div></td>
+    <td><div class="container"> <%= link_to 'Clientes', customers_path %></div></td>
+  </tr>
+</table>
+
+
+<div class = "container" style = "padding-top:20px;">
+  <%= yield %>
+</div>
 </body>
-</html>

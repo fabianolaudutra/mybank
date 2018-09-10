@@ -28,7 +28,7 @@ class ManagersController < ApplicationController
 
     respond_to do |format|
       if @manager.save
-        format.html { redirect_to @manager, notice: 'Manager was successfully created.' }
+        format.html { redirect_to @manager, notice: 'Gerente criado com sucesso.' }
         format.json { render :show, status: :created, location: @manager }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ManagersController < ApplicationController
   def update
     respond_to do |format|
       if @manager.update(manager_params)
-        format.html { redirect_to @manager, notice: 'Manager was successfully updated.' }
+        format.html { redirect_to @manager, notice: 'Gerente atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @manager }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ManagersController < ApplicationController
   def destroy
     @manager.destroy
     respond_to do |format|
-      format.html { redirect_to managers_url, notice: 'Manager was successfully destroyed.' }
+      format.html { redirect_to managers_url, notice: 'Gerente excluído com sucesso.' }
       format.json { head :no_content }
     end
   end

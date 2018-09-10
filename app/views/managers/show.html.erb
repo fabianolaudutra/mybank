@@ -1,7 +1,11 @@
-<p id="notice"><%= notice %></p>
+<% if !flash[:notice].blank? %>
+  <div class = "alert alert-info">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nome:</strong>
   <%= @manager.name %>
 </p>
 
@@ -11,9 +15,9 @@
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descrição:</strong>
   <%= @manager.description %>
 </p>
 
-<%= link_to 'Edit', edit_manager_path(@manager) %> |
-<%= link_to 'Back', managers_path %>
+<%= link_to 'Editar', edit_manager_path(@manager) %> |
+<%= link_to 'Voltar', managers_path %>

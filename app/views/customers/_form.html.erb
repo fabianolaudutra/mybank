@@ -1,7 +1,7 @@
 <%= form_with(model: customer, local: true) do |form| %>
   <% if customer.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+      <h2><%= pluralize(customer.errors.count, "error") %> Cliente Salvo</h2>
 
       <ul>
       <% customer.errors.full_messages.each do |message| %>
@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :Nome %>
     <%= form.text_field :name %>
   </div>
 
@@ -22,18 +22,17 @@
   </div>
 
   <div class="field">
-<!--    <%#= collection_select(:manager, :id, @managers, :id, :name, prompt: true) %></p>-->
-<!--    <p><label for = "manager_description">Description</label><br/>-->
-    <%= form.label :id_manager %>
-    <%= form.text_field :id_manager %>
+    <%= form.label :Gerente %>
+    <p><%=form.collection_select(:id_manager, Manager.all , :id, :name, {:prompt => 'Selecione o gerente.'}) %></p>
+
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label :Descrição %>
     <%= form.text_area :description %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit   %>
   </div>
 <% end %>

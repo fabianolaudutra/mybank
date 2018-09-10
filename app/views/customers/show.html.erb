@@ -1,7 +1,11 @@
-<p id="notice"><%= notice %></p>
+<% if !flash[:notice].blank? %>
+  <div class = "alert alert-info">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nome:</strong>
   <%= @customer.name %>
 </p>
 
@@ -11,14 +15,14 @@
 </p>
 
 <p>
-  <strong>Id manager:</strong>
-  <%= @customer.id_manager %>
+  <strong>Nome gerente:</strong>
+  <%= Manager.find(@customer.id_manager).name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descrição:</strong>
   <%= @customer.description %>
 </p>
 
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<%= link_to 'Editar', edit_customer_path(@customer) %> |
+<%= link_to 'Voltar', customers_path %>

@@ -29,4 +29,7 @@ ActiveRecord::Schema.define(version: 2018_09_06_190236) do
     t.datetime "updated_at", null: false
   end
 
+  # add_foreign_key "customers", "managers"
+
+
 end
